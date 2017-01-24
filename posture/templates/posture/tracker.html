@@ -12,14 +12,35 @@
         <script src="{% static "posture/js/jquery.form.js" %}"></script>
         <script src="webcamWorker.js"></script>
 
+        <audio id="audio_alert" controls>
+          <source src="{% static "posture/audio/alert.wav" %}" type="audio/wav">
+        </audio>
+
         <script>
+            // anchor to audio file
+            var audio_alert = document.getElementById("audio_alert");
             // wait for the DOM to be loaded
             $(document).ready(function() {
                 // bind 'myForm' and provide a simple callback function
                 $('#form').ajaxForm(function(data) {
-                    console.log(data);
+                    console.log(data)
+                    if(data == "posture_fail"){
+                      closePopupIfOpen('window_alert_user')
+                      alertUser();
+                    }
                 });
             });
+            var x = 0;
+            function alertUser() {
+              audio_alert.play();
+              window_alert_user = window.open( "http://localhost:8000/alertUser", "window_alert_user", "height = 200, width = 200" );
+            }
+
+            function closePopupIfOpen(popupName){
+              if(typeof(window[popupName]) != 'undefined' && !window[popupName].closed){
+                window[popupName].close();
+              }
+            }
         </script>
 
     </head>
@@ -30,6 +51,7 @@
         <canvas id="canvas" hidden></canvas>
 
         <input type="checkbox" id="checkbox" name="checkbox" value="checkbox">
+
 
         <form id ="form" action="/assertPosture" enctype="multipart/form-data" method="post">
             {% csrf_token %}

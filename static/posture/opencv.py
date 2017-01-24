@@ -11,9 +11,6 @@ def get_eyes_height(img_stream):
     url_face_cascade = os.path.join(settings.STATIC_ROOT, 'posture/haarcascade_frontalface_default.xml')
     url_eye_cascade = os.path.join(settings.STATIC_ROOT, 'posture/haarcascade_eye.xml')
 
-    print(url_face_cascade)
-    print(url_eye_cascade)
-
     face_cascade = cv2.CascadeClassifier(url_face_cascade)
     eye_cascade = cv2.CascadeClassifier(url_eye_cascade)
 

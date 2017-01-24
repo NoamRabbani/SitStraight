@@ -35,6 +35,17 @@ function startup() {
 
 	if (page_title == "captureBaseline"){
 		capture_baseline = document.getElementById('capture_baseline');
+
+		try{
+			capture_baseline.addEventListener('click', function(ev){
+				captureBaseline();
+				ev.preventDefault();
+			}, false);
+		}
+		catch(e){
+			console.log(e)
+		}
+
 	}
 	else if (page_title == "tracker"){
 		button_assert_posture = document.getElementById('button_assert_posture');
@@ -85,26 +96,6 @@ function startup() {
 	streaming = true;
 }
 }, false);
-
-    try{
-	capture_baseline.addEventListener('click', function(ev){
-		captureBaseline();
-		ev.preventDefault();
-	}, false);
-	}
-	catch(e){
-	    console.log(e)
-	}
-
-  //   try{
-  //       button_assert_posture.addEventListener('click', function(ev){
-  //           assertPosture();
-  //           ev.preventDefault();
-  //       }, false);
-	// }
-	// catch(e){
-	//     console.log(e)
-	// }
 
 }
 

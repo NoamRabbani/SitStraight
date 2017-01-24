@@ -15,7 +15,7 @@
 
     <body>
         <video id="video">Video stream not available.</video>
-        <button id="capture_baseline" onclick="captureBaseline();">Capture Baseline </button>
+        <button id="capture_baseline">Capture Baseline </button>
         <canvas id="canvas" hidden></canvas>
         <form id ="form" action="/tracker" enctype="multipart/form-data" method="post">
               {% csrf_token %}

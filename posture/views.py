@@ -9,14 +9,8 @@ from posture.static.posture import base64decode
 from posture.static.posture import opencv
 from .models import User
 
-
-# Create your views here.
-
 def frontPage(request):
     return render(request, 'posture/frontPage.html')
-
-def webcamWorker(request):
-    return render(request, 'posture/webcamWorker.js')
 
 def captureBaseline(request):
     return render(request, 'posture/captureBaseline.html')
@@ -54,7 +48,16 @@ def assertPosture(request):
     user_id = request.session.get('user_id')
     user_baseline_eyes_height = User.objects.get(user_id=user_id).user_baseline_eyes_height
 
+    print("baseline: %d" % user_baseline_eyes_height)
+    print("latest: %d" % user_latest_eyes_height)
+
     if (user_latest_eyes_height > user_baseline_eyes_height):
-        return HttpResponse("Incorrect Posture")
+        return HttpResponse("posture_fail")
     else:
-        return HttpResponse("Correct Posture")
+        return HttpResponse("posture_pass")
+
+def alertUser(request):
+    return render(request, 'posture/alertUser.html') 
+
+def webcamWorker(request):
+    return render(request, 'posture/webcamWorker.js')
