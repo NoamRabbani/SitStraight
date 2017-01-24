@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title id="page_title" value="tracker">SitStraight Posture Tracker Page</title>
+
+        <script src="{% static "posture/js/jquery-3.1.1.min.js" %}"></script>
+        <script src="{% static "posture/js/jquery.form.js" %}"></script>
+        <script src="webcamWorker.js"></script>
+
+        <script>
+            // wait for the DOM to be loaded
+            $(document).ready(function() {
+                // bind 'myForm' and provide a simple callback function
+                $('#form').ajaxForm(function(data) {
+                    console.log(data);
+                });
+            });
+        </script>
+
+    </head>
+
+    <body>
+
+        <video id="video">Video stream not available.</video>
+        <canvas id="canvas" hidden></canvas>
+
+        <input type="checkbox" id="checkbox" name="checkbox" value="checkbox">
+
+        <form id ="form" action="/assertPosture" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <input type="text" id="user_photo_url" name="user_photo_url" value="#" width="50">
+            <input type="submit" id="button_assert_posture" value="Submit">
+        </form>
+
+
+    </body>
+
+</html>

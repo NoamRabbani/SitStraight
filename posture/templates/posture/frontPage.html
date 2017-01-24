@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title id="page_title">SitStraight Home Page</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form id ="form" action="/captureBaseline" enctype="multipart/form-data" method="post">
+              {% csrf_token %}
+              <input type="submit" value="Begin">
+        </form>
+    </body>
+</html>

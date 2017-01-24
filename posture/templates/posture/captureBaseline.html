@@ -1,0 +1,26 @@
+<!doctype html>
+
+{% load staticfiles %}
+
+<html lang="en">
+
+    <head>
+        <title id="page_title" value="captureBaseline">SitStraight Baseline Capture Page</title>
+        <meta charset="UTF-8">
+
+        <script src="{% static "posture/js/jquery-3.1.1.min.js" %}"></script>
+        <script src="webcamWorker.js"></script>
+
+    </head>
+
+    <body>
+        <video id="video">Video stream not available.</video>
+        <button id="capture_baseline" onclick="captureBaseline();">Capture Baseline </button>
+        <canvas id="canvas" hidden></canvas>
+        <form id ="form" action="/tracker" enctype="multipart/form-data" method="post">
+              {% csrf_token %}
+              <input type="text" id="user_photo_url" name="user_photo_url" value="#" width="50">
+        </form>
+    </body>
+
+</html>
