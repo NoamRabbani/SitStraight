@@ -5,8 +5,8 @@ import json
 from django.http import HttpResponse, Http404
 from django.shortcuts import render
 
-from posture.static.posture import base64decode
-from posture.static.posture import opencv
+from posture.static.posture.python import base64decode
+from posture.static.posture.python import opencv
 from .models import User
 
 def frontPage(request):
@@ -57,7 +57,7 @@ def assertPosture(request):
         return HttpResponse("posture_pass")
 
 def alertUser(request):
-    return render(request, 'posture/alertUser.html') 
+    return render(request, 'posture/alertUser.html')
 
 def webcamWorker(request):
     return render(request, 'posture/webcamWorker.js')
