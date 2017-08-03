@@ -5,8 +5,8 @@ import json
 from django.http import HttpResponse, Http404
 from django.shortcuts import render
 
-from posture.static.posture.python import base64decode
-from posture.static.posture.python import opencv
+from posture.static.posture.opencv import base64decode
+from posture.static.posture.opencv import opencv
 from .models import User
 
 def frontPage(request):

@@ -1,13 +1,34 @@
 <!doctype html>
+
+{% load staticfiles %}
+
 <html lang="en">
     <head>
         <title id="page_title">SitStraight Home Page</title>
         <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="{% static "posture/css/style.css" %}">
+
     </head>
     <body>
+
+        <section class="flex-container">
+
+            <div class="flex-txt">
+                <h1>Computer vision technology</h1>
+                <h2>The position of your head in space is used to determine wether you are sitting upright or slouching. If you are slouching, you will get an  alert to correct your posture.</h2>
+            </div>
+
+            <div class="flex-img">
+                <img src="{% static "posture/img/computervision.png" %}" alt="eye">
+            </div>
+
+        </section>
+
         <form id ="form" action="/captureBaseline" enctype="multipart/form-data" method="post">
               {% csrf_token %}
               <input type="submit" value="Begin">
         </form>
+
     </body>
 </html>

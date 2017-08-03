@@ -1,0 +1,33 @@
+/* =========== PAGE COLOURS =========== */
+
+body {
+  background-color: #224B79;
+  color: white;
+}
+
+/* =========== FLEX BOXES =========== */
+
+.flex-container {
+    background-color: lightgrey;
+    display: -webkit-flex;
+    display: flex;
+    flex: 0 0 100vw;
+    height: 50vh;
+    margin: 0 10vw 0 10vw;
+}
+
+.flex-txt {
+    background-color: cornflowerblue;
+    flex: 0 0 40vw;
+    margin: 2vw;
+}
+
+.flex-img {
+    background-color: cornflowerblue;
+    flex: 0 0 auto;
+    margin: 2vw;
+}
+
+img {
+
+}
