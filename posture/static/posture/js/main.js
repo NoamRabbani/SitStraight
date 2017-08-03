@@ -1,8 +1,7 @@
-/* Tracker functionality */
 page_title = document.getElementById('page_title').getAttribute("value");
 
+/* Tracker functionality */
 if (page_title == "tracker"){
-  // Alert user if they are slouching
     var audio_alert = document.getElementById("audio_alert");
     $(document).ready(function() {
         $('#form').ajaxForm(function(data) {
@@ -17,14 +16,23 @@ if (page_title == "tracker"){
         });
     });
 
+    // Alert the user if they are slouching
     function alertUser() {
+      var hostname = window.location.hostname;
       audio_alert.play();
-      window_alert_user = window.open( "http://localhost:8000/alertUser", "window_alert_user", "height = 200, width = 200" );
+      window_alert_user = window.open( "/alertUser" , "window_alert_user", "height = 200, width = 200" );
     }
 
+    // Close the popup alert
     function closePopupIfOpen(popupName){
-      if(typeof(window[popupName]) != 'undefined' && !window[popupName].closed){
-        window[popupName].close();
+      try {
+        if(typeof(window[popupName]) != 'undefined' && !window[popupName].closed){
+          window[popupName].close();
+        }
+      }
+      catch(err){
+        console.log("Please allow popups")
       }
     }
+
 }

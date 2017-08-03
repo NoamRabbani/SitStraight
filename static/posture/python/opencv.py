@@ -8,8 +8,8 @@ import cv2
 def get_eyes_height(img_stream):
     img = create_opencv_image_from_stringio(img_stream)
 
-    url_face_cascade = os.path.join(settings.STATIC_ROOT, 'posture/python/haarcascade_frontalface_default.xml')
-    url_eye_cascade = os.path.join(settings.STATIC_ROOT, 'posture/python/haarcascade_eye.xml')
+    url_face_cascade = os.path.join(settings.STATIC_ROOT, 'posture/opencv/haarcascade_frontalface_default.xml')
+    url_eye_cascade = os.path.join(settings.STATIC_ROOT, 'posture/opencv/haarcascade_eye.xml')
 
     face_cascade = cv2.CascadeClassifier(url_face_cascade)
     eye_cascade = cv2.CascadeClassifier(url_eye_cascade)
