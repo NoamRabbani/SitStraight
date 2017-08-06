@@ -7,27 +7,86 @@ body {
 
 /* =========== FLEX BOXES =========== */
 
-.flex-container {
-    background-color: lightgrey;
-    display: -webkit-flex;
-    display: flex;
-    flex: 0 0 100vw;
-    height: 50vh;
-    margin: 0 10vw 0 10vw;
+.flex-container-row {
+  /*background-color: lightgrey;*/
+  display: -webkit-flex;
+  display: flex;
+  flex: 0 0 auto;
+  margin: 5vw 10vw 5vw 10vw;
+  align-items: center;
+  justify-content: center;
 }
 
-.flex-txt {
-    background-color: cornflowerblue;
-    flex: 0 0 40vw;
-    margin: 2vw;
+.flex-txt-row {
+  /*background-color: cornflowerblue;*/
+  flex: 0 0 40vw;
+  margin: 2vw;
+}
+
+.flex-container-column {
+  /*background-color: lightgrey;*/
+  display: -webkit-flex;
+  display: flex;
+  flex: 0 0 auto;
+  margin: 5vw 10vw 5vw 10vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-txt-column {
+  /*background-color: cornflowerblue;*/
+  flex: 0 0 auto;
+  margin: 2vw;
 }
 
 .flex-img {
-    background-color: cornflowerblue;
-    flex: 0 0 auto;
-    margin: 2vw;
+  /*background-color: cornflowerblue;*/
+  flex: 0 0 0;
+  margin: 2vw;
 }
 
-img {
+/* =========== FONTS =========== */
 
+h1 {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 45px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 38.5px;
+}
+
+h2 {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 35px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 38.5px;
+}
+
+/* =========== EFFECTS =========== */
+
+hr {
+  border-top: 2px solid #8c8b8b;
+  width:80vw;
+}
+
+.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #224B79;
+  font-size: 32px;
+  background: #ffffff;
+  padding: 10px 50px 10px 50px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #4f5559;
+  text-decoration: none;
+  color: #ffffff;
 }
