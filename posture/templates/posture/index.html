@@ -1,0 +1,82 @@
+<!doctype html>
+
+{% load staticfiles %}
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title id="page_title">SitStraight Home Page</title>
+
+  <link rel="stylesheet" href="{% static "posture/css/style.css" %}">
+
+</head>
+
+<body>
+
+  <!-- SitStraight Introduction -->
+  <div class="flex-container-column">
+
+    <div class="flex-item-txt-column">
+      <h1> SitStraight is a free and open source application that helps you correct your posture when sitting at the computer </h1>
+    </div>
+
+    <div class="flex-item-button">
+      <a class="btn" href="/captureBaseline">Start</a>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <!-- How does it work? -->
+  <div class="flex-container-row">
+
+    <div class="flex-item-txt-row">
+      <h2>How does it work?</h2>
+      <h3>SitStraight uses the webcam of your computer to determine if you are sitting upright or slouching. If you are slouching you will get an alert to correct your posture.</h3>
+    </div>
+
+    <div class="flex-item-img">
+      <img src="{% static "posture/img/computervision.png" %}" alt="computervision">
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="flex-container-row">
+
+    <!-- Privacy -->
+    <div class="flex-item-txt-row">
+      <h2> What about privacy?</h2>
+      <h3> Your images are never saved on the server. SitStraight only records the coordinates so your pictures are not accesible. </h3>
+    </div>
+
+    <div class="flex-item-img">
+      <img src="{% static "posture/img/lock.png" %}" alt="lock">
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="flex-container-row">
+
+    <!-- Health Benefits -->
+    <div class="flex-item-txt-row">
+      <h2> Health Benefits</h2>
+      <h3> It is estimated that 149 million days of work per year are lost because of low back pain. By correct your posture, you are improving your overall health. </h3>
+    </div>
+
+    <div class="flex-item-img">
+      <img src="{% static "posture/img/heart.png" %}" alt="heart">
+    </div>
+
+  </div>
+
+</body>
+
+</html>

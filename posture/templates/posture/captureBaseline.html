@@ -4,23 +4,49 @@
 
 <html lang="en">
 
-    <head>
-        <title id="page_title" value="captureBaseline">SitStraight Baseline Capture Page</title>
-        <meta charset="UTF-8">
+<head>
 
-        <script src="{% static "posture/js/jquery-3.1.1.min.js" %}"></script>
-        <script src="webcamWorker.js"></script>
+  <meta charset="UTF-8">
 
-    </head>
+  <title id="page_title" value="captureBaseline">SitStraight Baseline Capture Page</title>
 
-    <body>
-        <video id="video">Video stream not available.</video>
-        <button id="capture_baseline">Capture Baseline </button>
-        <canvas id="canvas" hidden></canvas>
-        <form id ="form" action="/tracker" enctype="multipart/form-data" method="post">
-              {% csrf_token %}
-              <input type="text" id="user_photo_url" name="user_photo_url" value="#" width="50">
-        </form>
-    </body>
+  <script src="{% static "posture/js/jquery-3.1.1.min.js" %}"></script>
+  <script src="webcamWorker.js"></script>
 
+  <link rel="stylesheet" href="{% static "posture/css/style.css" %}">
+
+</head>
+
+<body>
+
+  <div class="flex-container-column">
+
+    <!-- Instructions -->
+    <div class="flex-item-txt-column">
+      <h1> Please sit in an upright position and click "Capture Baseline" </h1>
+      <h3> This frame will be used as the reference posture. If your eyes drop lower than this reference, it is assumed you are slouching. </h3>
+    </div>
+
+    <!-- Webcam feed -->
+    <div class="flex-item-img">
+      <video id="video">Video stream not available.</video>
+    </div>
+
+    <!-- Button -->
+    <div class="flex-item-button">
+      <button class="btn" id="capture_baseline">Capture Baseline </button>
+    </div>
+
+  </div>
+
+  <!-- Hidden canvas -->
+  <canvas id="canvas" hidden></canvas>
+
+  <!-- Hidden form to submit picture -->
+  <form id ="form" action="/tracker" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <input type="text" id="user_photo_url" name="user_photo_url" value="#" width="50" hidden>
+  </form>
+
+</body>
 </html>

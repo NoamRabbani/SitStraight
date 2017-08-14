@@ -10,7 +10,7 @@ from posture.static.posture.opencv import opencv
 from .models import User
 
 def frontPage(request):
-    return render(request, 'posture/frontPage.html')
+    return render(request, 'posture/index.html')
 
 def captureBaseline(request):
     return render(request, 'posture/captureBaseline.html')

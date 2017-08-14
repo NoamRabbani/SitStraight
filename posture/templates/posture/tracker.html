@@ -4,36 +4,38 @@
 
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title id="page_title" value="tracker">SitStraight Posture Tracker Page</title>
+<head>
+  <meta charset="UTF-8">
+  <title id="page_title" value="tracker">SitStraight Posture Tracker Page</title>
 
-        <script src="{% static "posture/js/jquery-3.1.1.min.js" %}"></script>
-        <script src="{% static "posture/js/jquery.form.js" %}"></script>
+  <script src="{% static "posture/js/jquery-3.1.1.min.js" %}"></script>
+  <script src="{% static "posture/js/jquery.form.js" %}"></script>
 
-        <script src="{% static "posture/js/main.js" %}" defer></script>
-        <script src="webcamWorker.js"></script>
+  <script src="{% static "posture/js/main.js" %}" defer></script>
+  <script src="webcamWorker.js"></script>
 
-        <audio id="audio_alert" controls>
-          <source src="{% static "posture/audio/alert.wav" %}" type="audio/wav">
-        </audio>
+  <audio id="audio_alert" controls>
+    <source src="{% static "posture/audio/alert.wav" %}" type="audio/wav"></source>
+  </audio>
 
-    </head>
+  <link rel="stylesheet" href="{% static "posture/css/style.css" %}">
 
-    <body>
+</head>
 
-        <video id="video">Video stream not available.</video>
-        <canvas id="canvas" hidden></canvas>
+<body>
 
-        <input type="checkbox" id="checkbox" name="checkbox" value="checkbox">
+  <video id="video">Video stream not available.</video>
+  <canvas id="canvas" hidden></canvas>
+
+  <input type="checkbox" id="checkbox" name="checkbox" value="checkbox">
 
 
-        <form id ="form" action="/assertPosture" enctype="multipart/form-data" method="post">
-            {% csrf_token %}
-            <input type="text" id="user_photo_url" name="user_photo_url" value="#" width="50">
-            <input type="submit" id="button_assert_posture" value="Submit">
-        </form>
+  <form id ="form" action="/assertPosture" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <input type="text" id="user_photo_url" name="user_photo_url" value="#" width="50">
+    <input type="submit" id="button_assert_posture" value="Submit">
+  </form>
 
-    </body>
+</body>
 
 </html>
