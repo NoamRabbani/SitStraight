@@ -15,7 +15,19 @@
 </head>
 
 <body>
-  <h2> {{error_title}} </h2>
-  <h3> {{error_message}} </h3>
+
+  <div class="flex-container-row">
+
+    <div class="flex-item-img">
+      <img src="{% static "posture/img/exclamationmark.png" %}" alt="computervision">
+    </div>
+
+    <div class="flex-item-txt-row">
+      <h2> {{error_title}} </h2>
+      <h3> {{error_message}} </h3>
+    </div>
+
+  </div>
+
 </body>
 </html>

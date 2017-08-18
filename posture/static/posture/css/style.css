@@ -43,9 +43,8 @@ body {
 
 .flex-item-img {
   /*background-color: cornflowerblue;*/
-  flex: 0 0 0;
+  flex: 0 0 auto;
   margin: 2vw;
-  width: 14vw;
 }
 
 .flex-item-video {
