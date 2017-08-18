@@ -45,12 +45,39 @@ body {
   /*background-color: cornflowerblue;*/
   flex: 0 0 0;
   margin: 2vw;
+  width: 14vw;
+}
+
+.flex-item-video {
+  /*background-color: cornflowerblue;*/
+  flex: 0 0 auto;
+  margin: 2vw;
+  width: 560px;
+  height: 420px;
 }
 
 .flex-item-button {
   /*background-color: cornflowerblue;*/
   flex: 0 0 0;
   margin: 1vw;
+}
+
+.flex-item-log {
+  background-color: white;
+  flex: 0 0 auto;
+  margin: 1vw;
+  padding: 15px;
+  width: 530px;
+  height: 390px;
+  overflow: auto;
+
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 2vw;
+  color: black;
 }
 
 /* =========== FONTS =========== */
@@ -83,15 +110,6 @@ h3 {
 }
 
 /* =========== EFFECTS =========== */
-
-img {
-  width: 14vw;
-}
-
-video {
-  width: 35vw;
-  height: 22vw;
-}
 
 hr {
   border-top: 2px solid #8c8b8b;

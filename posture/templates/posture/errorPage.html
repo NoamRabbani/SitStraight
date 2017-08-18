@@ -6,8 +6,8 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Sit Up Straight</title>
-  <meta name="description" content="Please fix your posture">
+  <title>Error Page</title>
+  <meta name="description" content="Something went wrong">
   <meta name="author" content="SitStraight">
 
   <link rel="stylesheet" href="{% static "posture/css/style.css" %}">
@@ -15,6 +15,7 @@
 </head>
 
 <body>
-  <p> Please fix your posture </p>
+  <h2> {{error_title}} </h2>
+  <h3> {{error_message}} </h3>
 </body>
 </html>

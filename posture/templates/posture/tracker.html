@@ -14,26 +14,42 @@
   <script src="{% static "posture/js/main.js" %}" defer></script>
   <script src="webcamWorker.js"></script>
 
-  <audio id="audio_alert" controls>
-    <source src="{% static "posture/audio/alert.wav" %}" type="audio/wav"></source>
-  </audio>
-
   <link rel="stylesheet" href="{% static "posture/css/style.css" %}">
 
 </head>
 
 <body>
 
-  <video id="video">Video stream not available.</video>
-  <canvas id="canvas" hidden></canvas>
+  <div class="flex-container-row">
 
+    <!-- Webcam feed -->
+    <div class="flex-item-video">
+      <video id="video">Video stream not available.</video>
+    </div>
+
+    <div id="log_box" class="flex-item-log">
+      <p id="log_text"> </p>
+    </div>
+
+
+  </div>
+
+  <!-- Checkbox to activate the posture tracker -->
   <input type="checkbox" id="checkbox" name="checkbox" value="checkbox">
 
+  <!-- Hidden audio player that plays alert-->
+  <audio id="audio_alert" controls hidden>
+    <source src="{% static "posture/audio/alert.wav" %}" type="audio/wav"></source>
+  </audio>
 
+  <!-- Hidden canvas -->
+  <canvas id="canvas" hidden></canvas>
+
+  <!-- Hidden form to submit picture -->
   <form id ="form" action="/assertPosture" enctype="multipart/form-data" method="post">
     {% csrf_token %}
-    <input type="text" id="user_photo_url" name="user_photo_url" value="#" width="50">
-    <input type="submit" id="button_assert_posture" value="Submit">
+    <input type="text" id="user_photo_url" name="user_photo_url" value="#" width="50" hidden>
+    <input type="submit" id="button_assert_posture" value="Submit" hidden>
   </form>
 
 </body>
