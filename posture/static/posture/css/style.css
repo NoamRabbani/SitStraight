@@ -136,3 +136,13 @@ hr {
   outline:none;
   border: 0;
 }
+
+.size-medium {
+  width: 17vw;
+  height: 17vw;
+}
+
+.size-large {
+  width: 23vw;
+  height: 23vw;
+}
