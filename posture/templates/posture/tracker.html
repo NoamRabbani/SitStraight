@@ -15,6 +15,7 @@
   <script src="webcamWorker.js"></script>
 
   <link rel="stylesheet" href="{% static "posture/css/style.css" %}">
+  <link rel="stylesheet" href="{% static "posture/css/checkbox.css" %}">
 
 </head>
 
@@ -22,11 +23,20 @@
 
   <div class="flex-container-row">
 
-    <!-- Webcam feed -->
-    <div class="flex-item-video">
+    <!-- Video container -->
+    <div class="flex-item-video tracker-video">
+
+      <!-- Line that indicates baseline eye level -->
+      <svg width="560" height="420">
+        <line id="svg_line" x1="0" y1="{{user_baseline_eyes_height}}" x2="560" y2="{{user_baseline_eyes_height}}" style="stroke:white;stroke-width:2" />
+      </svg>
+
+      <!-- Webcam feed -->
       <video id="video">Video stream not available.</video>
+
     </div>
 
+    <!-- Log -->
     <div id="log_box" class="flex-item-log">
       <p id="log_text"> </p>
     </div>
@@ -34,9 +44,27 @@
 
   </div>
 
-  <!-- Checkbox to activate the posture tracker -->
-  <div class="checkbox">
-    <input type="checkbox" id="checkbox" name="checkbox" value="checkbox">
+  <div class="flex-container-row">
+
+    <!-- Checkbox to activate the posture tracker -->
+    <div class="flex-item-img">
+      <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" checked>
+      <label for="checkbox"></label> <!-- Necessary for checkbox to work, not very clean -->
+    </div>
+
+    <div class="flex-item-txt-row">
+      <h2> ON / OFF </h2>
+    </div>
+
+  </div>
+
+  <div class="flex-container-column">
+
+    <!-- Set new baseline -->
+      <div class="flex-item-button">
+        <a class="btn" href="/captureBaseline">Set new baseline</a>
+      </div>
+
   </div>
 
   <!-- Hidden audio player that plays alert-->

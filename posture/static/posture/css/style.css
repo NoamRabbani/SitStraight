@@ -19,7 +19,7 @@ body {
 
 .flex-item-txt-row {
   /*background-color: cornflowerblue;*/
-  flex: 0 0 40vw;
+  flex: 0 0 1;
   margin: 2vw;
 }
 
@@ -53,6 +53,7 @@ body {
   margin: 2vw;
   width: 560px;
   height: 420px;
+
 }
 
 .flex-item-button {
@@ -82,30 +83,42 @@ body {
 /* =========== FONTS =========== */
 
 h1 {
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 45px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: bold;
-	line-height: 2.5vw;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 45px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 2.5vw;
 }
 
 h2 {
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 45px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: bold;
-	line-height: 2vw;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 45px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 2vw;
 }
 
 h3 {
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 35px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	line-height: 2vw;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 35px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 2vw;
+}
+
+/* =========== IMAGE SIZES =========== */
+
+.size-medium {
+  width: 17vw;
+  height: 17vw;
+}
+
+.size-large {
+  width: 23vw;
+  height: 23vw;
 }
 
 /* =========== EFFECTS =========== */
@@ -113,6 +126,11 @@ h3 {
 hr {
   border-top: 2px solid #8c8b8b;
   width:80vw;
+}
+
+/* SVG has to be in absolute position to overlap video */
+svg {
+  position:absolute;
 }
 
 .btn {
@@ -135,14 +153,4 @@ hr {
   color: #ffffff;
   outline:none;
   border: 0;
-}
-
-.size-medium {
-  width: 17vw;
-  height: 17vw;
-}
-
-.size-large {
-  width: 23vw;
-  height: 23vw;
 }
