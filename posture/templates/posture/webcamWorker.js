@@ -21,7 +21,7 @@ var user_photo_url = null;
 
 var capture_baseline = null;
 
-var checkbox = null;
+var checkbox_onoff = null;
 var button_assert_posture = null;
 var form = null;
 
@@ -49,7 +49,7 @@ function startup() {
 	}
 	else if (page_title == "tracker"){
 		button_assert_posture = document.getElementById('button_assert_posture');
-		checkbox = document.getElementById('checkbox')
+		checkbox_onoff = document.getElementById('checkbox_onoff')
 
 		tracker_interval = setInterval(assertPosture, 2500)
 	}
@@ -122,7 +122,7 @@ function captureBaseline() {
 
 
 function assertPosture() {
-	if (checkbox.checked == true) {
+	if (checkbox_onoff.checked == true) {
 		var context = canvas.getContext('2d');
 		if (width && height) {
 			canvas.width = width;

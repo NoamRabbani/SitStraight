@@ -80,6 +80,12 @@ body {
   color: black;
 }
 
+.flex-item-checkbox-label {
+  /*background-color: cornflowerblue;*/
+  flex: 0 0 1;
+  margin: 0 3vw 0 0;
+}
+
 /* =========== FONTS =========== */
 
 h1 {
