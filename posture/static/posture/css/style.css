@@ -222,3 +222,15 @@ svg {
   outline:none;
   border: 0;
 }
+
+
+/* =========== Mobile section div =========== */
+
+@media all and (min-width: 1000px) {
+
+  .mobile-section  {
+    visibility: hidden;
+    display: none;
+  }
+
+}

@@ -16,104 +16,120 @@
 
 <body>
 
-  <div class="flex-page-content">
+  <hr class="hr-wide">
 
-    <hr class="hr-wide">
+  <!-- SitStraight Introduction -->
+  <div class="flex-container-column">
 
-    <!-- SitStraight Introduction -->
-    <div class="flex-container-column">
-
-      <div class="flex-item-txt-column">
-        <h1> SitStraight is a free and open source application that helps you correct your posture when sitting at the computer </h1>
-      </div>
-
-      <div class="flex-item-button">
-        <a class="btn" href="/captureBaseline">Start</a>
-      </div>
-
+    <div class="flex-item-txt-column">
+      <h1> SitStraight is a free and open source application that helps you correct your posture when sitting at the computer </h1>
     </div>
 
-    <hr class="hr-narrow">
-
-    <!-- Social icons -->
-    <div class="flex-container-social-icons">
-
-      <div class="flex-item-social-icon">
-        <a href="https://www.linkedin.com/in/nawrasrabbani" target="_blank">
-          <img src="{% static "posture/img/linkedin.png" %}" alt="linkedin" class="size-social-icon">
-        </a>
-      </div>
-
-      <div class="flex-item-social-icon">
-        <a href="https://github.com/NawrasRabbani/" target="_blank">
-          <img src="{% static "posture/img/github.png" %}" alt="github" class="size-social-icon">
-        </a>
-      </div>
-
+    <div class="flex-item-button">
+      <a class="btn" href="/captureBaseline">Start</a>
     </div>
 
-    <hr class="hr-wide">
+  </div>
 
-    <!-- How does it work? -->
+  <hr class="hr-narrow">
+
+  <!-- Social icons -->
+  <div class="flex-container-social-icons">
+
+    <div class="flex-item-social-icon">
+      <a href="https://www.linkedin.com/in/nawrasrabbani" target="_blank">
+        <img src="{% static "posture/img/linkedin.png" %}" alt="linkedin" class="size-social-icon">
+      </a>
+    </div>
+
+    <div class="flex-item-social-icon">
+      <a href="https://github.com/NawrasRabbani/" target="_blank">
+        <img src="{% static "posture/img/github.png" %}" alt="github" class="size-social-icon">
+      </a>
+    </div>
+
+  </div>
+
+  <hr class="hr-wide">
+
+  <!-- Mobile user warning -->
+  <div class="mobile-section">
+
     <div class="flex-container-row">
 
       <div class="flex-item-txt-row">
-        <h2>How does it work?</h2>
-        <h3>SitStraight uses the webcam of your computer to determine if you are sitting upright or slouching. If you are slouching you will get an alert to correct your posture.</h3>
+        <h2>You are using a portable device</h2>
+        <h3>SitStraight is a web application that only works on computers with webcams. You cannot access functionality on your portable device</h3>
       </div>
 
       <div class="flex-item-img">
-        <img src="{% static "posture/img/computervision.png" %}" alt="computervision" class="size-medium">
+        <img src="{% static "posture/img/mobile.png" %}" alt="computervision" class="size-medium">
       </div>
 
     </div>
 
     <hr class="hr-wide">
 
-    <!-- Privacy -->
-    <div class="flex-container-row">
+  </div>
 
-      <div class="flex-item-txt-row">
-        <h2> What about privacy?</h2>
-        <h3> Your images are never saved on the server. SitStraight only records the coordinates of your head in space so your pictures are not accesible. </h3>
-      </div>
+  <!-- How does it work? -->
+  <div class="flex-container-row">
 
-      <div class="flex-item-img">
-        <img src="{% static "posture/img/lock.png" %}" alt="lock" class="size-medium">
-      </div>
-
+    <div class="flex-item-txt-row">
+      <h2>How does it work?</h2>
+      <h3>SitStraight uses the webcam of your computer to determine if you are sitting upright or slouching. If you are slouching you will get an alert to correct your posture.</h3>
     </div>
 
-    <hr class="hr-wide">
-
-    <!-- Health Benefits -->
-    <div class="flex-container-row">
-
-      <div class="flex-item-txt-row">
-        <h2> Health Benefits</h2>
-        <h3> It is estimated that 149 million days of work per year are lost because of low back pain. By correcting your posture, you are improving your overall health. </h3>
-      </div>
-
-      <div class="flex-item-img">
-        <img src="{% static "posture/img/heart.png" %}" alt="heart" class="size-medium">
-      </div>
-
+    <div class="flex-item-img">
+      <img src="{% static "posture/img/computervision.png" %}" alt="computervision" class="size-medium">
     </div>
 
-    <hr class="hr-wide">
+  </div>
 
-    <!-- How to sit -->
-    <div class="flex-container-row">
+  <hr class="hr-wide">
 
-      <div class="flex-item-txt-row">
-        <h2> How to sit</h2>
-        <h3> Sitting right is good for your health, but it might not be so intuitive. Click <a href="http://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/office-ergonomics/art-20046169" target="_blank">here</a> to read about guidelines on proper sitting posture. </h3>
-      </div>
+  <!-- Privacy -->
+  <div class="flex-container-row">
 
-      <div class="flex-item-img">
-        <img src="{% static "posture/img/checkbox.png" %}" alt="checkbox" class="size-medium">
-      </div>
+    <div class="flex-item-txt-row">
+      <h2> What about privacy?</h2>
+      <h3> Your images are never saved on the server. SitStraight only records the coordinates of your head in space so your pictures are not accesible. </h3>
+    </div>
 
+    <div class="flex-item-img">
+      <img src="{% static "posture/img/lock.png" %}" alt="lock" class="size-medium">
+    </div>
+
+  </div>
+
+  <hr class="hr-wide">
+
+  <!-- Health Benefits -->
+  <div class="flex-container-row">
+
+    <div class="flex-item-txt-row">
+      <h2> Health Benefits</h2>
+      <h3> It is estimated that 149 million days of work per year are lost because of low back pain. By correcting your posture, you are improving your overall health. </h3>
+    </div>
+
+    <div class="flex-item-img">
+      <img src="{% static "posture/img/heart.png" %}" alt="heart" class="size-medium">
+    </div>
+
+  </div>
+
+  <hr class="hr-wide">
+
+  <!-- How to sit -->
+  <div class="flex-container-row">
+
+    <div class="flex-item-txt-row">
+      <h2> How to sit</h2>
+      <h3> Sitting right is good for your health, but it might not be so intuitive. Click <a href="http://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/office-ergonomics/art-20046169" target="_blank">here</a> to read about guidelines on proper sitting posture. </h3>
+    </div>
+
+    <div class="flex-item-img">
+      <img src="{% static "posture/img/checkbox.png" %}" alt="checkbox" class="size-medium">
     </div>
 
   </div>
