@@ -21,97 +21,114 @@
 
 <body>
 
+  <!-- Header -->
   <div class="flex-container-header">
 
+    <!-- SitStraight logo -->
     <div class="flex-item-img-header">
       <a href="/">
         <img src="{% static "posture/img/logo.png" %}" alt="logo" class="size-logo">
       </a>
     </div>
 
-  </div>
+    <!-- Instruction -->
+    <div class="flex-item-txt-row">
+      <h3> Maintain a good posture by keeping your eyes above the white line
+      </div>
 
-  <div class="flex-container-row">
-
-    <!-- Video container -->
-    <div class="flex-item-video tracker-video">
-
-      <!-- Line that indicates baseline eye level -->
-      <svg width="560" height="420">
-        <line id="svg_line" x1="0" y1="{{user_baseline_eyes_height}}" x2="560" y2="{{user_baseline_eyes_height}}" style="stroke:white;stroke-width:2" />
-      </svg>
-
-      <!-- Webcam feed -->
-      <video id="video">Video stream not available.</video>
+      <!-- Linkedin and github  logo -->
+      <div class="flex-item-img-header">
+        <a href="https://www.linkedin.com/in/nawrasrabbani" target="_blank">
+          <img src="{% static "posture/img/linkedin.png" %}" alt="linkedin" class="size-social-icon">
+        </a>
+        <a href="https://github.com/NawrasRabbani/" target="_blank">
+          <img src="{% static "posture/img/github.png" %}" alt="github" class="size-social-icon">
+        </a>
+      </div>
 
     </div>
 
-    <!-- Log -->
-    <div id="log_box" class="flex-item-log">
-      <p id="log_text"> </p>
+    <div class="flex-container-row">
+
+      <!-- Video container -->
+      <div class="flex-item-video tracker-video">
+
+        <!-- Line that indicates baseline eye level -->
+        <svg width="560" height="420">
+          <line id="svg_line" x1="0" y1="{{user_baseline_eyes_height}}" x2="560" y2="{{user_baseline_eyes_height}}" style="stroke:white;stroke-width:2" />
+        </svg>
+
+        <!-- Webcam feed -->
+        <video id="video">Video stream not available.</video>
+
+      </div>
+
+      <!-- Log -->
+      <div id="log_box" class="flex-item-log">
+        <p id="log_text"> </p>
+      </div>
+
+
     </div>
 
+    <div class="flex-container-row">
 
-  </div>
+      <!-- Checkbox to activate the posture tracker -->
+      <div class="flex-item-img">
+        <input type="checkbox" id="checkbox_onoff" name="checkbox_onoff" checked>
+        <label for="checkbox_onoff"></label> <!-- Necessary for checkbox to work, not very clean -->
+      </div>
 
-  <div class="flex-container-row">
+      <div class="flex-item-checkbox-label">
+        <h2> ON / OFF </h2>
+      </div>
 
-    <!-- Checkbox to activate the posture tracker -->
-    <div class="flex-item-img">
-      <input type="checkbox" id="checkbox_onoff" name="checkbox_onoff" checked>
-      <label for="checkbox_onoff"></label> <!-- Necessary for checkbox to work, not very clean -->
+      <!-- Checkbox to activate the popup -->
+      <div class="flex-item-img">
+        <input type="checkbox" id="checkbox_popup" name="checkbox_popup" checked>
+        <label for="checkbox_popup"> </label> <!-- Necessary for checkbox to work, not very clean -->
+      </div>
+
+      <div class="flex-item-checkbox-label">
+        <h2> Popup </h2>
+      </div>
+
+      <!-- Checkbox to activate the sound alert -->
+      <div class="flex-item-img">
+        <input type="checkbox" id="checkbox_sound" name="checkbox_sound" checked>
+        <label for="checkbox_sound"></label> <!-- Necessary for checkbox to work, not very clean -->
+      </div>
+
+      <div class="flex-item-checkbox-label">
+        <h2> Sound Alert </h2>
+      </div>
+
     </div>
 
-    <div class="flex-item-checkbox-label">
-      <h2> ON / OFF </h2>
+    <div class="flex-container-column">
+
+      <!-- Set new baseline -->
+      <div class="flex-item-button">
+        <a class="btn" href="/captureBaseline">Set new baseline</a>
+      </div>
+
     </div>
 
-    <!-- Checkbox to activate the popup -->
-    <div class="flex-item-img">
-      <input type="checkbox" id="checkbox_popup" name="checkbox_popup" checked>
-      <label for="checkbox_popup"> </label> <!-- Necessary for checkbox to work, not very clean -->
-    </div>
+    <!-- Hidden audio player that plays alert-->
+    <audio id="audio_alert" controls hidden>
+      <source src="{% static "posture/audio/alert.wav" %}" type="audio/wav"></source>
+    </audio>
 
-    <div class="flex-item-checkbox-label">
-      <h2> Popup </h2>
-    </div>
+    <!-- Hidden canvas -->
+    <canvas id="canvas" hidden></canvas>
 
-    <!-- Checkbox to activate the sound alert -->
-    <div class="flex-item-img">
-      <input type="checkbox" id="checkbox_sound" name="checkbox_sound" checked>
-      <label for="checkbox_sound"></label> <!-- Necessary for checkbox to work, not very clean -->
-    </div>
+    <!-- Hidden form to submit picture -->
+    <form id ="form" action="/assertPosture" enctype="multipart/form-data" method="post">
+      {% csrf_token %}
+      <input type="text" id="user_photo_url" name="user_photo_url" value="#" width="50" hidden>
+      <input type="submit" id="button_assert_posture" value="Submit" hidden>
+    </form>
 
-    <div class="flex-item-checkbox-label">
-      <h2> Sound Alert </h2>
-    </div>
+  </body>
 
-  </div>
-
-  <div class="flex-container-column">
-
-    <!-- Set new baseline -->
-    <div class="flex-item-button">
-      <a class="btn" href="/captureBaseline">Set new baseline</a>
-    </div>
-
-  </div>
-
-  <!-- Hidden audio player that plays alert-->
-  <audio id="audio_alert" controls hidden>
-    <source src="{% static "posture/audio/alert.wav" %}" type="audio/wav"></source>
-  </audio>
-
-  <!-- Hidden canvas -->
-  <canvas id="canvas" hidden></canvas>
-
-  <!-- Hidden form to submit picture -->
-  <form id ="form" action="/assertPosture" enctype="multipart/form-data" method="post">
-    {% csrf_token %}
-    <input type="text" id="user_photo_url" name="user_photo_url" value="#" width="50" hidden>
-    <input type="submit" id="button_assert_posture" value="Submit" hidden>
-  </form>
-
-</body>
-
-</html>
+  </html>
