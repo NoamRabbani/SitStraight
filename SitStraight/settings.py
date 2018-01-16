@@ -129,4 +129,4 @@ MEDIA_URL = '/media/'
 
 # Force SSL
 
-SECURE_SSL_REDIRECT = False
+SECURE_SSL_REDIRECT = True
