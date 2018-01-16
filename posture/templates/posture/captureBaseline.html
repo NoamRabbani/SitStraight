@@ -8,7 +8,9 @@
 
   <meta charset="UTF-8">
 
-  <title id="page_title" value="captureBaseline">SitStraight Baseline Capture Page</title>
+  <title id="page_title" value="captureBaseline">SitStraight Baseline Posture Capture Page</title>
+
+  <meta name="description" content="Sit upright and click on the button to capture a baseline. Your posture will be compared to this reference to determine if you are slouching."/>
 
   <script src="{% static "posture/js/jquery-3.1.1.min.js" %}"></script>
   <script src="webcamWorker.js"></script>
@@ -23,9 +25,8 @@
 
     <!-- Instructions -->
     <div class="flex-item-txt-column">
-      <h1> Please sit in an upright position and click "Set Baseline" </h1>
-      <h3> This frame will be used as the reference posture. If your eyes drop lower than this reference, it is assumed you are slouching. </h3>
-      <h3> Make sure to enable your webcam and allow pop-ups on this website</h3>
+      <h1> Provide a baseline for proper sitting posture </h1>
+      <h3> Sit upright and click on the button to capture a baseline. This baseline will be used to determine if you are slouching. </h3>
     </div>
 
     <!-- Webcam feed -->
