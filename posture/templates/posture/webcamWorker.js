@@ -54,29 +54,21 @@ function startup() {
 		tracker_interval = setInterval(assertPosture, 2500)
 	}
 
-	navigator.getMedia = ( navigator.getUserMedia ||
-		navigator.webkitGetUserMedia ||
-		navigator.mozGetUserMedia ||
-		navigator.msGetUserMedia);
-
-	navigator.getMedia(
+	navigator.mediaDevices.getUserMedia(
 	{
 		video: true,
 		audio: false
-	},
-	function(stream) {
-		if (navigator.mozGetUserMedia) {
-			video.mozSrcObject = stream;
-		} else {
-			var vendorURL = window.URL || window.webkitURL;
-			video.src = vendorURL.createObjectURL(stream);
-		}
-		video.play();
-	},
-	function(err) {
-		console.log("An error occured! " + err);
-	}
-	);
+	})
+	.then(function(mediaStream) {
+		var video = document.querySelector('video');
+		video.srcObject = mediaStream;
+		video.onloadedmetadata = function(e) {
+			video.play();
+		};
+	})
+	.catch(function(err) {
+		console.log(err.name + ": " + err.message);
+	});
 
 	video.addEventListener('canplay', function(ev){
 		if (!streaming) {
