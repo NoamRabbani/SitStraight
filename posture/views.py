@@ -65,9 +65,6 @@ def assertPosture(request):
     user_id = request.session.get('user_id')
     user_baseline_eyes_height = User.objects.get(user_id=user_id).user_baseline_eyes_height
 
-    print("baseline: %d" % user_baseline_eyes_height)
-    print("latest: %d" % user_latest_eyes_height)
-
     if (user_latest_eyes_height > user_baseline_eyes_height):
         return HttpResponse("posture_fail")
     else:
