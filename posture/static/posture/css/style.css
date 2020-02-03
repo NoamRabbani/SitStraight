@@ -150,6 +150,14 @@ h3 {
   font-weight: normal;
 }
 
+p {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.7vw;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+}
+
 a {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.7vw;
@@ -224,11 +232,20 @@ svg {
 }
 
 
-/* =========== Mobile section div =========== */
+/* =========== Mobile and desktop section divs =========== */
 
-@media all and (min-width: 1000px) {
+@media all and (min-width: 1025px) {
 
-  .mobile-section  {
+  .mobile-only-section  {
+    visibility: hidden;
+    display: none;
+  }
+
+}
+
+@media all and (max-width: 1025px) {
+
+  .desktop-only-section  {
     visibility: hidden;
     display: none;
   }
